@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listofactions SYSTEM "customActions.dtd">
+<listofactions>
+
+    <objecttype class="java.lang.Object" name="customSMSGatewayType" resourceBundle="com.sg.smsGatewayRB">
+        <action name="createSMS" beforeJS="setClickedButton">
+            <command class="com.sg.form.processors.CreateSMSGatewayFormProcessor" windowType="popup"/>
+        </action>
+
+        <action name="censorVerify">
+            <command class="com.sg.form.processors.CensorVerificationFormProcessor" windowType="popup"/>
+        </action>
+
+
+        <action name="showCensorsParts" uicomponent="CENSOR_VIEW">
+            <component name="com.sg.components.tables.builders.GetCensorsTableBuilder" windowType="page"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="smsObject" class="java.lang.Object" resourceBundle="com.sg.smsGatewayRB">
+        <action name="showDraftMessages" uicomponent="USER_VIEW">
+            <component name="com.sg.components.tables.builders.GetDraftMessagesTableBuilder" windowType="page" />
+        </action>
+        <action name="showBannedMessages" uicomponent="USER_VIEW">
+            <component name="com.sg.components.tables.builders.GetBannedMessagesTableBuilder" windowType="page" />
+        </action>
+        <action name="showSentMessages" uicomponent="USER_VIEW">
+            <component name="com.sg.components.tables.builders.GetSentMessagesTableBuilder" windowType="page" />
+        </action>
+
+        <action name="helloSelectedPart">
+            <command url="/netmarkets/jsp/smsGateway/helloSelectedPart.jsp"  windowType="popup" />
+        </action>
+
+    </objecttype>
+
+
+    <objecttype name="customButtons" class="wt.fc.Persistable" resourceBundle="com.sg.smsGatewayRB">
+        <action resourceBundle="com.sg.smsGatewayRB" name="okButton" id="PJL_wizard_ok" >
+            <command method="" class="" windowType="page" url="javascript:onSubmit()" onClick="setClickedButton('ext-gen35')"/>
+        </action>
+
+        <action resourceBundle="com.sg.smsGatewayRB" name="saveButton" id="edit_wizard_save" ajax="row" >
+            <command onClick="setClickedButton('ext-gen37')"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="customButtonsCensor" class="wt.fc.Persistable" resourceBundle="com.sg.smsGatewayRB">
+        <action resourceBundle="com.sg.smsGatewayRB" name="okButton" id="PJL_wizard_ok" >
+            <command method="" class="" windowType="page" url="javascript:onSubmit()" onClick="setClickedButton('ext-gen35')"/>
+        </action>
+
+        <action resourceBundle="com.sg.smsGatewayRB" name="saveButton" id="edit_wizard_save" ajax="row" >
+            <command onClick="setClickedButton('ext-gen37')"/>
+        </action>
+
+    </objecttype>
+
+    <objecttype name="FBIObject" class="wt.fc.Persistable" resourceBundle="com.sg.smsGatewayRB">
+        <action name="showFBIDanderMessages">
+            <component name="com.sg.components.tables.builders.GetFBIAgentsTableBuilder" windowType="page"/>
+        </action>
+        
+    </objecttype>
+
+    <objecttype class="java.lang.Object" name="censorWizardType" resourceBundle="com.sg.smsGatewayRB">
+<!--        <action name="censorVerify">-->
+<!--            <command class="com.sg.form.processors.CensorVerificationFormProcessor" windowType="popup"/>-->
+<!--        </action>-->
+
+<!--        <action name="create1stWizardStepCensor" required="true" >-->
+<!--            <command windowType="wizard_step"/>-->
+<!--        </action>-->
+<!--        <action name="editAttributesWizStep" id="editAttributesWizStep"-->
+<!--                preloadWizardPage="false"-->
+<!--                required="true" afterVK="editAttributes" resourceBundle=-->
+<!--                        "com.ptc.core.ui.componentRB">-->
+<!--            <component name="editAttributesWizStep" typeBased="true"-->
+<!--                       windowType="wizard_step"/>-->
+<!--        </action>-->
+
+    </objecttype>
+
+</listofactions>

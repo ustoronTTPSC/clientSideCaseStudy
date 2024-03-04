@@ -1,0 +1,128 @@
+<!ENTITY % targetFile 'targetFile CDATA #IMPLIED'>
+<!ENTITY % serviceProvider 'serviceProvider (wt|wtCustom|typeBased|typeBasedCustom) #IMPLIED'>
+<!ENTITY % name 'name CDATA #REQUIRED'>
+<!ENTITY % context 'context CDATA "default"'>
+<!ENTITY % overridable 'overridable (true|false) "true"'>
+<!ENTITY % multivalued 'multivalued CDATA #IMPLIED'>
+<!ENTITY % current 'current CDATA #IMPLIED'>
+<!ENTITY % ifUnlessAssembly 'ifAssembly CDATA #IMPLIED unlessAssembly CDATA #IMPLIED'>
+
+<!ELEMENT Configuration (Property|AddToProperty|RemoveFromProperty|Service|Resource|ConfigurationRef|ResetProperty|UndefineProperty|PropagationAction|WindchillServerInfo)*>
+<!ATTLIST Configuration
+   xmlns:xlink  CDATA #IMPLIED
+	%targetFile;
+	%serviceProvider;
+  %ifUnlessAssembly;
+>
+
+<!-- PTC to set "defaults", configurer to set "values" -->
+<!ELEMENT Property (Documentation)?>
+<!ATTLIST Property
+   %name;
+	default CDATA #IMPLIED
+   defaultUnix CDATA #IMPLIED
+	defaultWindows CDATA #IMPLIED
+	value CDATA #IMPLIED
+	%targetFile;
+	%overridable;
+   %multivalued;
+   %current;
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT AddToProperty EMPTY>
+<!ATTLIST AddToProperty
+   %name;
+	value CDATA #REQUIRED
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT RemoveFromProperty EMPTY>
+<!ATTLIST RemoveFromProperty
+   %name;
+	value CDATA #REQUIRED
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT Documentation (Synopsis,Description,Deprecation?)>
+<!ATTLIST Documentation
+	category CDATA #IMPLIED
+	key CDATA #IMPLIED
+>
+
+<!ELEMENT Synopsis (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Deprecation (#PCDATA)>
+
+<!ELEMENT ResetProperty EMPTY>
+<!ATTLIST ResetProperty
+   %name;
+	%targetFile;
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT UndefineProperty EMPTY>
+<!ATTLIST UndefineProperty
+   %name;
+	%targetFile;
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT Service (Option)*>
+<!ATTLIST Service
+   %name;
+   %context;
+	%targetFile;
+	%serviceProvider;
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT Resource (Option)*>
+<!ATTLIST Resource
+   %name;
+   %context;
+	%targetFile;
+	%serviceProvider;
+  %ifUnlessAssembly;
+>
+
+<!-- For Service/Options requires serviceClass and cardinality.  For Resource/Options requires resource attribute -->
+<!ELEMENT Option EMPTY>
+<!ATTLIST Option
+   selector CDATA #IMPLIED
+   requestor CDATA #REQUIRED
+   order CDATA "0"
+   serviceClass CDATA #IMPLIED
+   cardinality (duplicate|singleton) "duplicate"
+   resource CDATA #IMPLIED
+   %overridable;
+	%targetFile;
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT ConfigurationRef EMPTY>
+<!ATTLIST ConfigurationRef
+   xlink:href CDATA #REQUIRED
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT PropagationAction (ClassPathEntry)*>
+<!ATTLIST PropagationAction
+   className CDATA #REQUIRED
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT ClassPathEntry EMPTY>
+<!ATTLIST ClassPathEntry
+   dir CDATA #IMPLIED
+   file CDATA #IMPLIED
+  %ifUnlessAssembly;
+>
+
+<!ELEMENT WindchillServerInfo (SCN,GUID,CompanyName?,SON?,EMail?,GenerationDateTime)>
+<!ELEMENT SCN (#PCDATA)>
+<!ELEMENT GUID (#PCDATA)>
+<!ELEMENT CompanyName (#PCDATA)>
+<!ELEMENT SON (#PCDATA)>
+<!ELEMENT EMail (#PCDATA)>
+<!ELEMENT GenerationDateTime (#PCDATA)>

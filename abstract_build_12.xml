@@ -1,0 +1,239 @@
+<project name="CopyAnt" default="RunAll">
+
+ <property name="currentLoc2" location="${ant.file}/.." />
+	<!--<property name="currentLoc" location="." />-->
+
+    <condition property="force_overwrite" value="false">
+        <not>
+            <isset property="force_overwrite"/>
+        </not>
+    </condition>
+
+        <!--condition property="WT_HOME" value="Y:\ptc\Windchill_11.2\Windchill"-->
+<condition property="WT_HOME" value="Z:\">
+	<not>
+		<isset property="WT_HOME"/>
+	</not>
+</condition>
+<!--condition property="WT_HOME" value="Y:\ptc\Windchill_11.2\Windchill"-->
+<condition property="ROOT_WT" value="X:">
+	<not>
+		<isset property="ROOT_WT"/>
+	</not>
+</condition>
+<condition property="BIN_OUTPUT" value="out/production/SMSGateway">
+	<not>  
+		<isset property="BIN_OUTPUT"/>
+	</not>
+</condition>
+
+<condition property="Project2" value="${currentLoc2}">
+	<not>  
+		<isset property="Project2"/>
+	</not>
+</condition>
+      
+<condition property="work_temp" value="C:\My\Work\temp">
+	<not>  
+		<isset property="work_temp"/>
+	</not>
+</condition>
+	
+<condition property="Lib" value="C:\My\Libs\W10.1 M1040\jars">
+	<not>  
+		<isset property="Lib"/>
+	</not>
+</condition>
+
+	
+<property name="Lib" value="${work_temp}/10.1M040LibCache" />
+<property name="Sandbox" value="${work_temp}/code/core/sandbox/" />	
+
+	<echo>From: ${Project2}\${BIN_OUTPUT}</echo>
+<echo>To: ${WT_HOME}</echo>
+<condition property="dest.exists" else="false">
+	<available file="${WT_HOME}" type="dir" />
+</condition>
+<echo>Exists: ${dest.exists}</echo>
+
+<macrodef name="set.timestamp">
+	<sequential>
+		<tstamp>
+			<format property="current.time" pattern="MM/dd/yyyy hh:mm:ss" />
+		</tstamp>
+	</sequential>
+</macrodef>
+
+<set.timestamp />
+<echo message="${current.time}" />
+
+
+<macrodef name="classCopy">
+	<attribute name="destination" />
+	<attribute name="source" />
+	<sequential>
+		<copy todir="@{destination}" verbose="true" overwrite="${force_overwrite}">
+			<fileset dir="@{source}">
+				<exclude name="wt.properties" />
+				<exclude name="**/.gitkeep" />
+			</fileset>
+		</copy>
+	</sequential>
+</macrodef>
+
+	<target name="CopyJavaRBToHost" if="${dest.exists}">
+		<copy todir="C:\Users\storonyanskau\smsgateway\src\com\sg" verbose="true" overwrite="${force_overwrite}">
+			<fileset dir="${WT_HOME}/src/com/sg/">
+				<include name="**/*RB.java" />
+			</fileset>
+		</copy>
+	</target>
+
+<target name="RunAll" if="${dest.exists}">
+	<antcall target="CompiledSources"/>
+	<antcall target="CompiledGenSources"/>
+	<antcall target="CopyOthers"/>
+	<antcall target="CopySources"/>
+<!--	<antcall target="copyLib"/>-->
+</target>
+
+	<target name="CompiledSources" if="${dest.exists}">
+		<classCopy source="${Project2}\${BIN_OUTPUT}" destination="${WT_HOME}/codebase/" />
+	</target>
+
+	<target name="CompiledGenSources" if="${dest.exists}">
+		<classCopy source="${Project2}\${BIN_OUTPUT}" destination="${WT_HOME}/codebase/" />
+	</target>
+
+	<target name="CopySources" if="${dest.exists}">
+		<copy todir="${WT_HOME}/src/" verbose="true" overwrite="${force_overwrite}">
+			<fileset dir="${Project2}\src" erroronmissingdir="false">
+				<include name="**/*.java" />
+				<exclude name="**/WindchillVersion.java" />
+			</fileset>
+			<fileset dir="${Project2}src_gen" erroronmissingdir="false">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+
+<!--		<copy todir="${ROOT_WT}/IntelliJProject/src" verbose="true" overwrite="${force_overwrite}">-->
+<!--			<fileset dir="${Project2}/src/">-->
+<!--				<exclude name="**/.gitkeep" />-->
+<!--			</fileset>-->
+<!--		</copy>-->
+
+	</target>
+
+	<!--<target name="CSVs" if="${dest.exists}">-->
+		<!--<copy todir="${WT_HOME}/src" verbose="true" includeEmptyDirs="false" overwrite="${force_overwrite}">-->
+			<!--<fileset dir="${Project2}/src/">-->
+				<!--<exclude name="**/*.java"/>-->
+				<!--<exclude name="**/.gitkeep" />-->
+			<!--</fileset>-->
+		<!--</copy>-->
+	<!--</target>-->
+
+<!--
+<target name="CompiledTests" if="${dest.exists}">
+	<classCopy source="${Project2}\${BIN_OUTPUT}\src\test" destination="${WT_HOME}/codebase/" />
+</target>-->
+
+
+
+<target name="CopyOthers" if="${dest.exists}">
+
+	<copy todir="${WT_HOME}/scripts/" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/scripts/" erroronmissingdir="false">
+			<exclude name="**/*.class" />
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+
+	<copy todir="${WT_HOME}/loadFiles" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/loadFiles/" erroronmissingdir="false">
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+
+	<copy todir="${WT_HOME}/loadXMLFiles" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/loadXMLFiles/" erroronmissingdir="false">
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+
+	<copy todir="${WT_HOME}/tasks" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/tasks/" erroronmissingdir="false">
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+	
+	<copy todir="${WT_HOME}/codebase/" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/codebase/" erroronmissingdir="false">
+			<exclude name="**/.gitkeep" />
+			<exclude name="**/~*" />
+		</fileset>
+	</copy>
+	
+	<copy todir="${WT_HOME}/src" verbose="true" includeEmptyDirs="false" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/src/">
+			<exclude name="**/*.java"/>
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+	
+	<copy todir="${WT_HOME}/src" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/src" includes="**/*.rbInfo">
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>	
+
+	<copy todir="${WT_HOME}/" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/wtSafeArea/siteMod/" erroronmissingdir="false">
+			<exclude name="**/*.java"/>		
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+	
+	<copy todir="${WT_HOME}/db" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/db" erroronmissingdir="false">
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+
+<!--	<copy todir="${WT_HOME}/wtSafeArea" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/wtSafeArea/">
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>-->
+
+	<copy todir="${WT_HOME}/wtCustom" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}/wtCustom/" erroronmissingdir="false">
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+
+	<copy todir="${WT_HOME}/" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${Project2}">
+			<include name="*.xml" />
+			<include name="*.xconf" />
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+	
+</target>
+
+<target name="copyLib" if="${dest.exists}">
+	<copy todir="${WT_HOME}/codebase/WEB-INF/lib/" verbose="true" overwrite="${force_overwrite}">
+		<fileset dir="${WT_HOME}/codebase/WEB-INF/lib/">
+			<include name="*.jar" />
+			<exclude name="**/.gitkeep" />
+		</fileset>
+	</copy>
+</target>
+
+<!--	<target name="registerXconf" if="${dest.exists}">-->
+<!--		<property name="xconfFilePath" value="codebase\ext\vestas\organization\ui\actions\orgUiConfiguration.xconf" />-->
+<!--		<replace file="${WT_HOME}/declarations.xconf"-->
+<!--				 token="&lt;/Configuration&gt;" value="   &lt;ConfigurationRef xlink:href=&quot;${xconfFilePath}&quot;/>&#xA;&lt;/Configuration&gt;"/>-->
+<!--	</target>-->
+</project>

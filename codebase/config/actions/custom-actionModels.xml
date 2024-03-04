@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE actionmodels SYSTEM "customActionmodels.dtd">
+<actionmodels>
+    <model name="folderbrowser_toolbar_new_submenu" resourceBundle="com.ptc.windchill.enterprise.folder.FolderActionResource">
+        <description>'New' submenu for folder browser toolbar actions menu.</description>
+        <action name="create" type="document" shortcut="true"/>
+        <!--  New Document  -->
+        <action name="createMulti" type="document"/>
+        <!--  New Multiple Documents  -->
+        <action name="uploadDocumentsFromCompressedFile" type="document"/>
+        <!--  Upload Documents from Compressed File  -->
+        <action name="separator" type="separator"/>
+        <action name="createPartWizard" type="part" shortcut="true"/>
+        <action name="createSMS" type="customSMSGatewayType" shortcut="true"/>
+        <!--  New Part  -->
+        <action name="createMultiPart" type="part"/>
+        <!--  New Multiple Parts  -->
+        <action name="assignMultiPlant" type="enterprisedata"/>
+        <!--  Assign Multiple Plants  -->
+        <action name="newPlantFunctionalData" type="baseclient"/>
+        <!--  Create PFD Manually -->
+        <action name="accessPlantData" type="baseclient"/>
+        <!--  Edit PFD Manually -->
+        <action name="createWorkSetWizard" type="workSet"/>
+        <action name="separator" type="separator"/>
+        <action name="createProductFamily" type="productfamily"/>
+        <action name="separator" type="separator"/>
+        <action name="createMpmprocessplan" type="mpml"/>
+        <!--  New Process Plan  -->
+        <action name="createMPMResource" type="mpml"/>
+        <!--  New Resource  -->
+        <action name="createMPMStandardOperation" type="mpml"/>
+        <action name="createMPMStandardGroup" type="mpml"/>
+        <action name="createMPMStandardCC" type="mpml"/>
+        <action name="separator" type="separator"/>
+        <action name="create" type="changeNotice"/>
+        <!--  New Change Notice  -->
+        <action name="createChangeDirective" type="changeDirective" shortcut="true"/>
+        <!--  New Change Directive  -->
+        <action name="create" type="changeRequest" shortcut="true"/>
+        <!--  New Change Request  -->
+        <action name="create" type="problemReport"/>
+        <!--  New Problem Report  -->
+        <action name="create" type="softwareIssue"/>
+        <!--  New Software Issue  -->
+        <action name="create" type="variance"/>
+        <!--  New Variance  -->
+        <action name="create" type="promotionRequest"/>
+        <!--  New Promotion Request  -->
+        <action name="separator" type="separator"/>
+        <action name="create" type="changeReview" shortcut="true"/>
+        <!--  New Change Review  -->
+        <action name="separator" type="separator"/>
+        <action name="create_request" type="npi"/>
+        <!--  New Part Request  -->
+        <action name="separator" type="separator"/>
+        <action name="createTextualInformationElement" type="techPubs"/>
+        <!--  New Textual Information Element  -->
+        <action name="createGraphicInformationElement" type="techPubs"/>
+        <!--  New Graphic Information Element  -->
+        <action name="createPartListInformationElement" type="techPubs"/>
+        <!--  New Parts List Information Element  -->
+        <action name="createPubStructWizard" type="arbortext"/>
+        <!--  New Publication Structure  -->
+        <action name="createPubStructWizard" type="rules"/>
+        <!--  New Publication Structure (Rules)  -->
+        <action name="createASPSWizard" type="asps"/>
+        <!--  New Information Structure  -->
+        <action name="createServicePH" type="corestruct"/>
+        <!--  New Service Product Hierarchy  -->
+        <action name="separator" type="separator"/>
+        <action name="create" type="folder" shortcut="true"/>
+        <!--  New Folder  -->
+        <action name="add_link" type="bookmark"/>
+        <!--  New Link  -->
+        <action name="separator" type="separator"/>
+        <action name="separator" type="separator"/>
+        <action name="createNoteMenuAction" type="note"/>
+        <!--  New Note  -->
+        <action name="createNoteFromTemplateMenuAction" type="note"/>
+        <!--  New Note from Template  -->
+        <action name="separator" type="separator"/>
+        <action name="createBaseline" type="baseline"/>
+        <!--  New Baseline  -->
+        <action name="create" type="managedcollection"/>
+        <!--  New Managed Collection  -->
+        <action name="separator" type="separator"/>
+        <action name="createSpecification" type="specification" resourceBundle="com.ptc.windchill.enterprise.requirement.specificationActionsRB"/>
+        <!--  New Specification  -->
+        <action name="doc_insert_from_folder" type="document"/>
+        <!--  Insert Document  -->
+        <action name="part_insert_from_folder" type="part"/>
+        <!--  Insert Part  -->
+        <action name="createUDI" type="udi"/>
+        <!--  New UDI Submission  -->
+    </model>
+    <model name="third_level_nav_part">
+        <submodel name="general"/>
+        <!--  General  -->
+        <submodel name="relatedItems"/>
+        <!--  Related Objects  -->
+        <submodel name="changes"/>
+        <!--  Change  -->
+        <submodel name="history"/>
+        <!--  History  -->
+        <submodel name="collaboration"/>
+        <!--  Collaboration  -->
+        <submodel name="prodAnalytics"/>
+        <!--  Product Analytics  -->
+        <submodel name="security3rdnav"/>
+        <!--  Security  -->
+        <submodel name="configLinks"/>
+        <submodel name="thingworxCustomizeMenu"/>
+        <submodel name="quality"/>
+
+        <!--  Quality Objects  -->
+    </model>
+    <model name="partInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+        <submodel name="partInfoDetailsTab"/>
+        <action name="productStructureGWT" type="psb"/>
+        <submodel name="partInfoContentTab"/>
+        <submodel name="partInfoRelatedItemsTab"/>
+        <submodel name="changesTab"/>
+        <submodel name="partInfoHistoryTab"/>
+        <submodel name="partInfoWhereUsedTab"/>
+        <submodel name="requirementTraceabilityTab"/>
+        <submodel name="amlAvlTab"/>
+        <submodel name="prodAnalyticsTab"/>
+        <submodel name="udiSubmissionsTab"/>
+
+    </model>
+    <model name="partInfoPageTabSet" resource="com.ptc.core.ui.navigationRB">
+        <submodel name="partInfoDetailsTab"/>
+        <action name="productStructureGWT" type="psb"/>
+        <submodel name="partInfoContentTab"/>
+        <submodel name="partInfoRelatedItemsTab"/>
+        <submodel name="changesTab"/>
+        <submodel name="partInfoHistoryTab"/>
+        <submodel name="partInfoWhereUsedTab"/>
+        <submodel name="requirementTraceabilityTab"/>
+        <submodel name="amlAvlTab"/>
+        <submodel name="prodAnalyticsTab"/>
+        <submodel name="udiSubmissionsTab"/>
+        <submodel name="smsGatewayForClient"/>
+        <submodel name="showCensorsSmsTab"/>
+        <submodel name="smsGatewayForFBIAgents"/>
+    </model>
+
+    <!--
+     ************************************************************
+    -->
+    <!--
+     ***  Information Page 3rd Level Navigation Menu Bar      ***
+    -->
+    <!--
+     ************************************************************
+    -->
+    <!-- Part information page 3rd level nav menu bar -->
+    <model name="third_level_nav_part">
+        <submodel name="general"/>
+        <!-- General -->
+        <submodel name="relatedItems"/>
+        <!-- Related Objects -->
+        <submodel name="changes"/>
+        <!-- Change -->
+        <submodel name="history"/>
+        <!-- History -->
+        <submodel name="collaboration"/>
+        <!-- Collaboration -->
+        <submodel name="prodAnalytics"/>
+        <!-- Product Analytics -->
+        <submodel name="security3rdnav"/>
+        <!-- Security -->
+        <submodel name="configLinks"/>
+        <submodel name="thingworxCustomizeMenu"/>
+        <submodel name="quality"/>
+        <!-- Quality Objects -->
+        <submodel name="smsGatewayForClient"/>
+        <submodel name="showCensorsSmsTab"/>
+        <submodel name="smsGatewayForFBIAgents"/>
+
+    </model>
+
+    <model name="CustomDefaultWizardButtons">
+        <action name="cancelButton" type="object"/>
+        <action name="saveButton" type="customButtons"/>
+        <action name="okButton" type="customButtons"/>
+
+    </model>
+
+    <model name="CustomWizardButtonsCensor">
+        <action name="cancelButton" type="object"/>
+        <action name="saveButton" type="customButtonsCensor"/>
+        <action name="okButton" type="customButtonsCensor"/>
+    </model>
+
+    <model name="showCensorsSmsTab" resourceBundle="com.sg.smsGatewayRB">
+        <action name="showCensorsParts"  type="customSMSGatewayType"/>
+    </model>
+
+    <model name="smsGatewayForClient" resourceBundle="com.sg.smsGatewayRB">
+        <action name="showDraftMessages" type="smsObject"/>
+        <action name="showBannedMessages" type="smsObject"/>
+        <action name="showSentMessages" type="smsObject"/>
+    </model>
+
+    <model name="smsGatewayForFBIAgents" resourceBundle="com.sg.smsGatewayRB">
+        <action name="showFBIDanderMessages" type="FBIObject"/>
+    </model>
+
+    <model name="showDraftMessages toolbar" resourceBundle="com.sg.smsGatewayRB">
+        <action name="createSMS" type="customSMSGatewayType" shortcut="true"/>
+        <action name="helloSelectedPart" type="smsObject" shortcut="true"/>
+        <action name="list_delete" type="object" shortcut="true"/>
+    </model>
+
+    <model name="showBannedMessages toolbar" resourceBundle="com.sg.smsGatewayRB">
+        <action name="createSMS" type="customSMSGatewayType" shortcut="true"/>
+        <action name="helloSelectedPart" type="smsObject" shortcut="true"/>
+        <action name="list_delete" type="object" shortcut="true"/>
+    </model>
+
+    <model name="showSentMessages toolbar" resourceBundle="com.sg.smsGatewayRB">
+        <action name="createSMS" type="customSMSGatewayType" shortcut="true"/>
+    </model>
+
+    <model name="showCensorsParts toolbar" resourceBundle="com.sg.smsGatewayRB">
+        <action name="censorVerify" type="customSMSGatewayType" shortcut="true"/>
+    </model>
+</actionmodels>

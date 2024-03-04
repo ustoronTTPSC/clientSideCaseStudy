@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NmLoader
+  SYSTEM "standard12_1.dtd">
+<NmLoader>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SMSReusabeAttributes</csvname>
+      <csvhierarchyDisplayName>SMSReusabeAttributes</csvhierarchyDisplayName>
+      <csvorganizerPaths></csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name/>
+      <csvdescription/>
+      <csvdata_type>ORG</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>SMSStatus</csvname>
+      <csvhierarchyDisplayName>SMSStatus</csvhierarchyDisplayName>
+      <csvorganizerPaths>SMSReusabeAttributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>SMSStatus</csvdisplay_name>
+      <csvdescription>SMSStatus</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>TelephoneNumber</csvname>
+      <csvhierarchyDisplayName>TelephoneNumber</csvhierarchyDisplayName>
+      <csvorganizerPaths>SMSReusabeAttributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>TelephoneNumber</csvdisplay_name>
+      <csvdescription>TelephoneNumber</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>CensorsInfo</csvname>
+      <csvhierarchyDisplayName>CensorsInfo</csvhierarchyDisplayName>
+      <csvorganizerPaths>SMSReusabeAttributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>CensorsInfo</csvdisplay_name>
+      <csvdescription>CensorsInfo</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+   <csvAttrDefinizer handler="wt.iba.definition.DefinitionLoaderWithCache.createAttrDefinizer">
+      <csvname>MessageText</csvname>
+      <csvhierarchyDisplayName>MessageText</csvhierarchyDisplayName>
+      <csvorganizerPaths>SMSReusabeAttributes</csvorganizerPaths>
+      <csvdefinitionPaths/>
+      <csvdisplay_name>MessageText</csvdisplay_name>
+      <csvdescription>MessageText</csvdescription>
+      <csvdata_type>STR</csvdata_type>
+      <csvQoMName/>
+      <csvnameValuePairs/>
+      <csvlogicalIdentifier/>
+   </csvAttrDefinizer>
+</NmLoader>

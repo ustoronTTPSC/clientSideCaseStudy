@@ -1,0 +1,40 @@
+ResourceInfo.class=wt.tools.resource.EnumResourceInfo
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+ResourceInfo.replacement=false
+ResourceInfo.UUID=8db111cc-5428-4d8b-b2e9-ed3a5b20baf0
+
+
+# Entry Format (values equal to default value are not included)
+# <key>.value=
+# <key>.category=
+# <key>.comment=
+# <key>.argComment<n>=
+# <key>.constant=
+# <key>.customizable=
+# <key>.deprecated=
+# <key>.abbreviatedDisplay=
+# <key>.fullDisplay=
+# <key>.shortDescription=
+# <key>.longDescription=
+# <key>.order=
+# <key>.defaultValue=
+# <key>.selectable=
+
+# Entry Contents
+
+ADMIN.value=Admin
+ADMIN.shortDescription=Admin
+ADMIN.order=2704
+
+CENSOR.value=Censor
+CENSOR.shortDescription=Censor
+CENSOR.order=2832
+
+FBI_AGENT.value=FBI Agent
+FBI_AGENT.shortDescription=FBI Agent
+FBI_AGENT.order=2896
+
+ORDINARY_USER.value=Ordinary User
+ORDINARY_USER.shortDescription=Ordinary User
+ORDINARY_USER.order=2768

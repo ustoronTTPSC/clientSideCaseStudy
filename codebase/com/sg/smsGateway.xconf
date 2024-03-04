@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/service.properties">
+
+    <Service name="com.ptc.core.ui.validation.UIComponentValidator" context="default">
+        <Option requestor="null" serviceClass="com.sg.validators.CustomCreateSMSValidator"
+                selector="createSMS" cardinality="duplicate"/>
+    </Service>
+
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+        <Option serviceClass="com.sg.data.utilities.SmsFBIAgentDataUtility" requestor="java.lang.Object"
+                selector="messageTextColumn"/>
+    </Service>
+
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+        <Option serviceClass="com.sg.data.utilities.SmsFBIAgentDataUtility" requestor="java.lang.Object"
+                selector="telephoneNumberColumn"/>
+    </Service>
+
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+        <Option serviceClass="com.sg.data.utilities.SmsFBIAgentDataUtility" requestor="java.lang.Object"
+                selector="receiverColumn"/>
+    </Service>
+
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+        <Option serviceClass="com.sg.data.utilities.SmsFBIAgentDataUtility" requestor="java.lang.Object"
+                selector="statusColumn"/>
+    </Service>
+
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+        <Option serviceClass="com.sg.data.utilities.SmsRedTextDataUtility" requestor="java.lang.Object"
+                selector="dangerousCensorsColumn"/>
+    </Service>
+
+    <Service name="com.ptc.core.components.descriptor.DataUtility">
+        <Option serviceClass="com.sg.data.utilities.SmsFBIAgentDataUtility" requestor="java.lang.Object"
+                selector="smsStatusColumn"/>
+    </Service>
+
+</Configuration>

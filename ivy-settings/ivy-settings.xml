@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivysettings>
+	<settings defaultResolver="default" />
+	<typedef name="svn" classname="fm.last.ivy.plugins.svnresolver.SvnResolver" />
+	<properties file="${ivy.settings.url}/ivysettings.properties" />
+	<properties file="./ivy-settings.properties" />
+	<resolvers>
+		<svn name="main" userName="${repo.project.username}" userPassword="${repo.project.password}"
+			repositoryRoot="${repo.project.root-url}" publishMessage="${svn.publish.message}">
+			<ivy pattern="[organisation]/[module]/[revision]/ivy.xml" />
+			<artifact pattern="[organisation]/[module]/[revision]/[artifact].[ext]" />
+		</svn>
+		<ibiblio name="public" usepoms="false" />
+		<chain name="default">
+			<resolver ref="main" />
+			<resolver ref="public" />
+		</chain>
+	</resolvers>
+	<modules>
+		<module organisation="dependencies" name="Module1" resolver="main" />
+	</modules>
+</ivysettings>

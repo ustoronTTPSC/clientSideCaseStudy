@@ -1,0 +1,61 @@
+ResourceInfo.class=wt.tools.resource.StringResourceInfo
+
+ResourceInfo.customizable=true
+ResourceInfo.deprecated=false
+
+
+#################################################################
+##### used as constants in code, do not change the order!!! #####
+#################################################################
+
+smsObject.bannedMessages.description.value=Banned Messages
+smsObject.sentMessages.description.value=Sent Messages
+smsObject.draftMessages.description.value=Draft Messages
+
+customSMSGatewayType.showCensorsSMS.description.value=Show Censors SMS
+
+#################################################################
+
+customSMSGatewayType.createSMS.description.value=Create SMS Gateway
+customSMSGatewayType.createSMS.title.value=Create SMS Gateway
+customSMSGatewayType.createSMS.tooltip.value=Create SMS Gateway
+customSMSGatewayType.createSMS.icon.value=topic.gif
+
+customSMSGatewayType.showCensorsSMS.title.value=Show Censors SMS
+
+object.showCensorsSmsTab.description.value=Show Censors SMS
+
+smsObject.helloSelectedPart.tooltip.value=Edit Selected Object
+smsObject.helloSelectedPart.icon.value=multi_update.gif
+
+customButtons.okButton.description.value=Send
+customButtons.saveButton.description.value=Save
+
+object.smsGatewayForClient.description.value=Sms Gateway
+
+smsObject.draftMessages.title.value=Draft Messages
+smsObject.bannedMessages.title.value=Banned Messages
+smsObject.sentMessages.title.value=Sent Messages
+
+object.draftMessages.title.value=Draft Messages
+object.bannedMessages.title.value=Banned Messages
+object.sentMessages.title.value=Sent Messages
+
+smsObject.draftMessages.description.value=Draft Messages
+smsObject.bannedMessages.description.value=Banned Messages
+smsObject.sentMessages.description.value=Sent Messages
+
+smsObject.draftMessages.table.title=Banned Messages
+smsObject.bannedMessages.table.title=Draft Messages
+smsObject.sentMessages.table.title=Sent Messages
+
+object.smsGatewayForFBIAgents.description.value=FBI Agents SMS Gateway
+FBIObject.showFBIDanderMessages.description.value=Danger Messages
+
+customSMSGatewayType.censorVerify.description.value=Verify SMS
+customSMSGatewayType.censorVerify.title.value=Verify SMS
+customSMSGatewayType.censorVerify.tooltip.value=Verify SMS
+customSMSGatewayType.censorVerify.icon.value=attention_needed_16.gif
+
+customButtonsCensor.okButton.description.value=Reject
+customButtonsCensor.saveButton.description.value=Approve

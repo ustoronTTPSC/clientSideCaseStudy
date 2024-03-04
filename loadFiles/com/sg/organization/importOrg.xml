@@ -1,0 +1,18 @@
+<?xml version="1.0" ?><!DOCTYPE NmLoader SYSTEM "standardX24.dtd">
+<NmLoader>
+    <csvOrgContainer handler="wt.inf.container.LoadContainer.createOrgContainer" >
+        <csvcontainerName>SMSGateway</csvcontainerName>
+        <csvcontainerTemplateRef>General (PDM)</csvcontainerTemplateRef>
+        <csvbusinessNamespace>SMSGateway</csvbusinessNamespace>
+        <csvsharingEnabled></csvsharingEnabled>
+        <csvcreator>wcadmin</csvcreator>
+        <csvowner>wcadmin</csvowner>
+        <csvsubscriber>true</csvsubscriber>
+        <csvconferencingURL></csvconferencingURL>
+        <csvdescription>SMSGateway Description</csvdescription>
+        <csvinternetDomain></csvinternetDomain>
+        <csvOrganizationAddress>This is a Postal Address</csvOrganizationAddress>
+        <csvconferencingID></csvconferencingID>
+        <csvrestrictedDirectorySearchScope></csvrestrictedDirectorySearchScope>
+    </csvOrgContainer>
+</NmLoader>
